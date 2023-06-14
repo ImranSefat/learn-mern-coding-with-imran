@@ -32,14 +32,14 @@ function ApiResponse() {
   if (!data) return <p>Loading...</p>;
   return (
     <div className="container flex flex-col gap-4">
-      <p className="text-5xl font-bold">{data.title}</p>
-      <p className="text-xl">Date: {data.date}</p>
-      <p className="text-xl leading-loose">Explanation: {data.explanation}</p>
       {data.media_type === "image" ? (
-        <img src={data.url} alt="" className="max-w-lg" />
+        <img src={data.url} alt="" className="max-w-lg mx-auto" />
       ) : (
         <iframe src={data.url} />
       )}
+      <p className="text-5xl font-bold">{data.title}</p>
+      <p className="text-xl">Date: {data.date}</p>
+      <p className="text-xl leading-loose">Explanation: {data.explanation}</p>
     </div>
   );
 }
