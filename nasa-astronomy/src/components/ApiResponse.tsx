@@ -19,6 +19,7 @@ function ApiResponse() {
         const apiKey = import.meta.env.VITE_API_KEY;
 
         const apiResponse: ApiResponseResultType = await fetchData(
+          // make sure to add your key here.
           `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
         );
         setData(apiResponse);
