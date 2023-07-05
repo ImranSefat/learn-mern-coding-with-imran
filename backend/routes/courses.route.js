@@ -35,10 +35,10 @@ route.route("/").get(async (req, res) => {
   }
 });
 
-route.route("/:id").get((req, res) => {
-  // get all the course from mongodb using mongoose filtered using the id
+route.route("/:id").get(async (req, res) => {
+  // get the course from mongodb using mongoose filtered using the id
   try {
-    const course = Course.findById(req.params.id);
+    const course = await Course.findById(req.params.id);
     res.status(200).json(course);
   } catch (error) {
     console.log(error.message);

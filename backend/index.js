@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const studentsRouter = require("./routes/students.route");
+// const studentsRouter = require("./routes/students.route");
 const coursesRouter = require("./routes/courses.route");
 
 app.use(express.json());
@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/students", studentsRouter);
+// app.use("/students", studentsRouter);
 app.use("/courses", coursesRouter);
 
 mongoose
