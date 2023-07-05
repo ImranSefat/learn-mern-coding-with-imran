@@ -35,16 +35,16 @@ route.route("/").get(async (req, res) => {
   }
 });
 
-route.route("/:id").get((req, res) => {
+route.route("/:id").get(async (req, res) => {
   // get all the course from mongodb using mongoose filtered using the id
   try {
-    const course = Course.findById(req.params.id);
+    const course = await Course.findById(req.params.id);
     res.status(200).json(course);
   } catch (error) {
     console.log(error.message);
     res.status(400).json({ error: error.message });
   }
-  res.send("this is a specific course detail with id: " + req.params.id);
+  
 });
 
 // Update
