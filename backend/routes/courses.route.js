@@ -44,7 +44,6 @@ route.route("/:id").get(async (req, res) => {
     console.log(error.message);
     res.status(400).json({ error: error.message });
   }
-  res.send("this is a specific course detail with id: " + req.params.id);
 });
 
 // Update
